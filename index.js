@@ -43,15 +43,6 @@ client.connect(err => {
     })
   })
 
-//   app.post('/orders', (req, res) => {      
-//     const newCourse = req.body;
-//     console.log('adding new: ', newCourse);
-//     orderCollection.insertOne(newCourse)
-//     .then(result => {
-//         console.log('count', result.insertedCount);
-//         res.send(result.insertedCount > 0)
-//     })
-// })
 
   app.post('/upload', (req, res) => {      
       const newCourse = req.body;
@@ -84,6 +75,4 @@ client.connect(err => {
 
 
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+app.listen(process.env.PORT || port)
